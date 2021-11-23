@@ -30,3 +30,12 @@ class TestOstoskori(unittest.TestCase):
         self.kori.lisaa_tuote(villa_sukat)
 
         self.assertEqual(self.kori.tavaroita_korissa(), 2)
+
+    def test_kahden_tuotteen_lisaamisen_jalkeen_kori_palauttaa_oikean_hinnan(self):
+        sukat = Tuote("Sukat puuvilla", 5)
+        villa_sukat = Tuote("Villasukat", 6)
+
+        self.kori.lisaa_tuote(sukat)
+        self.kori.lisaa_tuote(villa_sukat)
+
+        self.assertEqual(self.kori.hinta(), 11)
