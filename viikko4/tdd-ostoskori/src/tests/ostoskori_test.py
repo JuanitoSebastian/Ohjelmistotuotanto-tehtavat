@@ -39,3 +39,10 @@ class TestOstoskori(unittest.TestCase):
         self.kori.lisaa_tuote(villa_sukat)
 
         self.assertEqual(self.kori.hinta(), 11)
+
+    def test_kahden_saman_tuotteen_lisaamisen_jalkeen_kori_palauttaa_oikean_hinnan(self):
+        mayrakoira = Tuote("Koff 12kpl", 15)
+        self.kori.lisaa_tuote(mayrakoira)
+        self.kori.lisaa_tuote(mayrakoira)
+
+        self.assertEqual(self.kori.hinta(), 30)
