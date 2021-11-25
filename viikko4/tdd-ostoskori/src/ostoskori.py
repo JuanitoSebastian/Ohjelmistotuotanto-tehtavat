@@ -36,13 +36,12 @@ class Ostoskori:
         self._ostokset[poistettava.nimi].muuta_lukumaaraa(-1)
 
         lkm = self._ostokset[poistettava.nimi].lukumaara()
-        
+
         if lkm == 0:
             self._ostokset.pop(poistettava.nimi, None)
 
     def tyhjenna(self):
-        pass
-        # tyhjentää ostoskorin
+        self._ostokset.clear()
 
     def ostokset(self):
         return list(self._ostokset.values())
