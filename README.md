@@ -1,2 +1,2 @@
 # Ohjelmistotuotanto tehtävät
-Helsingin yliopiston Ohjelmistotuotantokurssin tehtäviä. 
+Helsingin yliopiston Ohjelmistotuotantokurssin tehtäviä. 🙂
