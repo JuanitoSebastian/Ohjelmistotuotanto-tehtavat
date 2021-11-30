@@ -24,10 +24,10 @@ class TennisGame1: TennisGame {
 
     var score: String? {
         if tie {
-            return score1 > 2 ? "Deuce" : "\(getPointsString(score1))-All"
+            return score1 > pointsThirty ? "Deuce" : "\(getPointsString(score1))-All"
         }
 
-        if score1 < 4 && score2 < 4 {
+        if score1 < pointsGame && score2 < pointsGame {
             return "\(getPointsString(score1))-\(getPointsString(score2))"
         }
 
@@ -41,11 +41,11 @@ extension TennisGame1 {
 
     private func getPointsString(_ points: Int) -> String {
         switch points {
-        case 0:
+        case pointsLove:
             return "Love"
-        case 1:
+        case pointsFifteen:
             return "Fifteen"
-        case 2:
+        case pointsThirty:
             return "Thirty"
         default:
             return "Forty"
@@ -65,3 +65,11 @@ extension TennisGame1 {
     }
 
 }
+
+
+// MARK: - Constants
+let pointsLove = 0
+let pointsFifteen = 1
+let pointsThirty = 2
+let pointsForty = 3
+let pointsGame = 4
