@@ -25,9 +25,10 @@ class QueryBuilder:
         self.stack.pusk(All())
         return QueryBuilder(self.stack)
 
-    def orMatch(self, *matchers):
-        self.stack.push(Or(matchers))
+    def oneOf(self, m1, m2):
+        self.stack.push(Or(m1, m2))
         return QueryBuilder(self.stack)
+
 
     def build(self):
         matchers = self.stack.stack

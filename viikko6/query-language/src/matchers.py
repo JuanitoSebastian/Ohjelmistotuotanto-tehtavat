@@ -46,7 +46,7 @@ class All:
 
 class Or:
     def __init__(self, *matchers):
-        self._matchers = matchers
+        self._matchers = matchers[0]
 
     def matches(self, player):
         for matcher in self._matchers:
